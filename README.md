@@ -20,6 +20,7 @@ pip install flask pillow torch torchvision tqdm
 ```
 
 ### Step 2 — Download PlantVillage dataset
+link to download dataset I used: https://www.kaggle.com/datasets/abdallahalidev/plantvillage-dataset
 ```bash
 kaggle datasets download -d abdallahalidev/plantvillage-dataset
 unzip plantvillage-dataset.zip -d data/
