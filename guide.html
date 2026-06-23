@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disease Guide — CropScan AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+<!-- Background -->
+<div class="hero-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      CropScan<em>AI</em>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/" data-i18n="nav_home">Home</a>
+        <a href="/scan" data-i18n="nav_scan">Scan</a>
+        <a href="/guide" class="active" data-i18n="nav_guide">Guide</a>
+        <a href="/scan" class="nav-cta" data-i18n="nav_cta">Start Scanning</a>
+      </div>
+      <select class="lang-select" id="langSelect" title="Language">
+        <option value="en">EN</option>
+        <option value="hi">हि</option>
+        <option value="mr">मर</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+  <div class="section-tag" data-i18n="guide_tag">PLANT DISEASE GUIDE</div>
+  <h1 class="section-title">
+    <span data-i18n="guide_title">Know your</span>
+    <em data-i18n="guide_em">enemy.</em>
+  </h1>
+  <p class="section-sub" data-i18n="guide_sub">
+    Understanding common plant diseases helps you act before they spread.
+  </p>
+</div>
+
+<!-- GUIDE CONTENT -->
+<section class="guide-section">
+  <div class="guide-grid">
+
+    <!-- What is plant disease? -->
+    <div class="guide-card">
+      <div class="guide-card-icon">🌱</div>
+      <h2 class="guide-card-title">What is Plant Disease?</h2>
+      <p>Plant disease is any abnormality in plant function or structure caused by biological agents — fungi, bacteria, viruses, or nematodes — or abiotic factors such as nutrient deficiency, drought, or temperature extremes.</p>
+      <p>Early identification is critical. Once a pathogen establishes itself, it can spread exponentially, wiping out entire fields within days under the right conditions.</p>
+      <div class="guide-tag-row">
+        <span class="guide-tag green">Fungal</span>
+        <span class="guide-tag gold">Bacterial</span>
+        <span class="guide-tag red">Viral</span>
+        <span class="guide-tag">Abiotic</span>
+      </div>
+    </div>
+
+    <!-- Why early detection matters -->
+    <div class="guide-card">
+      <div class="guide-card-icon">⏱</div>
+      <h2 class="guide-card-title">Why Early Detection Matters</h2>
+      <p>Many diseases begin asymptomatically. By the time visible symptoms appear, the infection has often spread to neighbouring tissue. Early-stage detection can reduce crop loss by up to 70%.</p>
+      <p>AI-based image diagnosis can detect sub-visual patterns in leaf colouration and texture that the human eye misses, enabling interventions days before lesions appear.</p>
+      <div class="guide-tag-row">
+        <span class="guide-tag lime">70% Loss Reduction</span>
+        <span class="guide-tag green">Sub-visual Detection</span>
+      </div>
+    </div>
+
+    <!-- Common disease reference table -->
+    <div class="guide-card full-width">
+      <div class="guide-card-icon">📊</div>
+      <h2 class="guide-card-title">Common Diseases — Quick Reference</h2>
+      <table class="disease-table">
+        <thead>
+          <tr>
+            <th>Disease</th>
+            <th>Cause</th>
+            <th>Affected Crops</th>
+            <th>Key Symptoms</th>
+            <th>Treatment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Early Blight</td>
+            <td>Alternaria solani (Fungus)</td>
+            <td>Tomato, Potato</td>
+            <td>Dark concentric rings on older leaves; yellowing around lesions</td>
+            <td>Copper fungicide, crop rotation, remove infected leaves</td>
+          </tr>
+          <tr>
+            <td>Late Blight</td>
+            <td>Phytophthora infestans (Oomycete)</td>
+            <td>Tomato, Potato</td>
+            <td>Water-soaked lesions, white mould on underside, rapid browning</td>
+            <td>Mancozeb or chlorothalonil; destroy infected plants</td>
+          </tr>
+          <tr>
+            <td>Powdery Mildew</td>
+            <td>Podosphaera spp. (Fungus)</td>
+            <td>Cherry, Grape, Pepper</td>
+            <td>White powdery coating on leaf surface; leaf curl</td>
+            <td>Neem oil, potassium bicarbonate, sulfur fungicide</td>
+          </tr>
+          <tr>
+            <td>Black Rot</td>
+            <td>Guignardia bidwellii / Diplodia seriata (Fungi)</td>
+            <td>Apple, Grape</td>
+            <td>Brown circular lesions with black borders; mummified fruit</td>
+            <td>Captan or mancozeb; prune infected tissue</td>
+          </tr>
+          <tr>
+            <td>Bacterial Spot</td>
+            <td>Xanthomonas spp. (Bacteria)</td>
+            <td>Tomato, Peach, Pepper</td>
+            <td>Small, water-soaked spots; lesions turn brown and fall out</td>
+            <td>Copper hydroxide spray; avoid overhead irrigation</td>
+          </tr>
+          <tr>
+            <td>Mosaic Virus</td>
+            <td>Tobamovirus (Virus)</td>
+            <td>Tomato, Pepper</td>
+            <td>Mottled green-yellow pattern; distorted, curled leaves</td>
+            <td>No chemical cure; remove plants, control aphid vectors</td>
+          </tr>
+          <tr>
+            <td>Yellow Leaf Curl</td>
+            <td>Begomovirus (Virus)</td>
+            <td>Tomato</td>
+            <td>Upward leaf curl, yellowing, stunted growth</td>
+            <td>Control whitefly vectors; reflective mulch; resistant varieties</td>
+          </tr>
+          <tr>
+            <td>Common Rust</td>
+            <td>Puccinia sorghi (Fungus)</td>
+            <td>Corn</td>
+            <td>Reddish-brown pustules on both leaf surfaces</td>
+            <td>Triazole or sulfur fungicide; plant resistant hybrids</td>
+          </tr>
+          <tr>
+            <td>Septoria Leaf Spot</td>
+            <td>Septoria lycopersici (Fungus)</td>
+            <td>Tomato</td>
+            <td>Circular spots with white centres and dark margins</td>
+            <td>Chlorothalonil spray; remove lower infected leaves</td>
+          </tr>
+          <tr>
+            <td>Spider Mites</td>
+            <td>Tetranychus urticae (Arthropod)</td>
+            <td>Tomato, Strawberry</td>
+            <td>Fine webbing, yellow stippling, bronzed leaves</td>
+            <td>Miticide or insecticidal soap; predatory mites (biological)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Prevention tips -->
+    <div class="guide-card">
+      <div class="guide-card-icon">🛡</div>
+      <h2 class="guide-card-title">Prevention Best Practices</h2>
+      <ul class="prevention-list">
+        <li>Rotate crops every season to break disease cycles in the soil.</li>
+        <li>Use certified disease-free seeds and transplants from reputable sources.</li>
+        <li>Water at soil level in the morning to minimise foliar wetness.</li>
+        <li>Maintain adequate plant spacing for air circulation — poor airflow drives fungal outbreaks.</li>
+        <li>Apply preventative neem oil or copper spray every 3–4 weeks during high-risk periods.</li>
+        <li>Remove and destroy (never compost) infected plant material promptly.</li>
+        <li>Monitor fields weekly using a systematic grid pattern for early-stage detection.</li>
+        <li>Disinfect tools with 70% isopropyl alcohol between plants to prevent transfer.</li>
+      </ul>
+    </div>
+
+    <!-- Environmental factors -->
+    <div class="guide-card">
+      <div class="guide-card-icon">🌡</div>
+      <h2 class="guide-card-title">Environmental Risk Factors</h2>
+      <p>Disease pressure increases dramatically under specific environmental conditions. Understanding these helps time preventive sprays and reduce losses.</p>
+      <p><strong style="color:var(--green-hi)">High humidity (above 80%)</strong> — primary driver of fungal and bacterial spread. Ensure drainage and airflow.</p>
+      <p><strong style="color:var(--green-hi)">Temperature range 15–25°C</strong> — optimal germination window for most fungal spores.</p>
+      <p><strong style="color:var(--green-hi)">Leaf wetness duration</strong> — even 6 hours of continuous moisture can trigger Late Blight in tomato. Post-rain inspections are essential.</p>
+      <p><strong style="color:var(--green-hi)">Dense canopy</strong> — restricts airflow and traps humidity close to leaf surfaces. Prune regularly.</p>
+      <div class="guide-tag-row">
+        <span class="guide-tag red">High Humidity Risk</span>
+        <span class="guide-tag gold">Temperature Sensitive</span>
+        <span class="guide-tag">Leaf Wetness</span>
+      </div>
+    </div>
+
+    <!-- CTA card -->
+    <div class="guide-card full-width" style="text-align:center; padding: 48px 32px; background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-card-2) 100%);">
+      <div style="font-size:48px; margin-bottom:16px;">🔬</div>
+      <h2 class="guide-card-title" style="font-size:1.8rem; margin-bottom:12px;">Ready to scan your crop?</h2>
+      <p style="color:var(--text-mid); max-width:480px; margin:0 auto 28px;">Upload a leaf photo and get an AI-powered diagnosis in under 5 seconds.</p>
+      <a href="/scan" class="btn-primary" style="font-size:16px; padding:16px 36px;">
+        <span>🌿</span>
+        <span data-i18n="nav_cta">Start Scanning</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon" style="font-size:20px">⬡</span>
+      <span class="logo-text">CropScan<em>AI</em></span>
+      <p data-i18n="footer_tagline">AI-powered agriculture diagnostics for modern farming.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4 data-i18n="footer_product">Product</h4>
+        <a href="#" data-i18n="footer_features">Features</a>
+        <a href="#" data-i18n="footer_accuracy">Accuracy Report</a>
+        <a href="#" data-i18n="footer_api">API Docs</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_support">Support</h4>
+        <a href="#" data-i18n="footer_docs">Documentation</a>
+        <a href="#" data-i18n="footer_contact">Contact</a>
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="footer_copy">© 2025 CropScan AI · Built for farmers, by scientists.</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CropScan AI — Plant Disease Detector</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+
+<!-- Background -->
+<div class="hero-grid"></div>
+<div class="orb orb-1"></div>
+<div class="orb orb-2"></div>
+<div class="orb orb-3"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="logo-icon">⬡</span>
+      CropScan<em>AI</em>
+    </a>
+    <div class="nav-right">
+      <div class="nav-links">
+        <a href="/" class="active" data-i18n="nav_home">Home</a>
+        <a href="/scan" data-i18n="nav_scan">Scan</a>
+        <a href="/guide" data-i18n="nav_guide">Guide</a>
+        <a href="/scan" class="nav-cta" data-i18n="nav_cta">Start Scanning</a>
+      </div>
+      <select class="lang-select" id="langSelect" title="Language">
+        <option value="en">EN</option>
+        <option value="hi">हि</option>
+        <option value="mr">मर</option>
+      </select>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section>
+  <div class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        <span data-i18n="hero_badge">AI-Powered Plant Diagnostics</span>
+      </div>
+      <h1 class="hero-title">
+        <span data-i18n="hero_title_1">Detect crop disease</span><br>
+        <em data-i18n="hero_title_em">in seconds.</em>
+      </h1>
+      <p class="hero-sub" data-i18n="hero_sub">
+        Upload a leaf photo and our AI model analyses it instantly — identifying disease, confidence level, and tailored treatment recommendations.
+      </p>
+      <div class="hero-actions">
+        <a href="/scan" class="btn-primary" data-i18n="hero_cta">Scan a Leaf →</a>
+        <a href="/guide" class="btn-ghost" data-i18n="hero_ghost">View Disease Guide</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num">97<small>%</small></span>
+          <span class="stat-label" data-i18n="stat_acc">Accuracy</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">14<small>+</small></span>
+          <span class="stat-label" data-i18n="stat_species">Species</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">33</span>
+          <span class="stat-label" data-i18n="stat_diseases">Diseases</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="scan-frame">
+        <div class="scan-frame-corners"><span></span></div>
+        <div class="scan-line"></div>
+        <div class="scan-leaf">🍃</div>
+        <div class="scan-overlay"></div>
+        <div class="scan-data">
+          <div class="scan-data-row">
+            <span class="scan-data-label">STATUS</span>
+            <span class="scan-data-value">SCANNING…</span>
+          </div>
+          <div class="scan-data-row">
+            <span class="scan-data-label">MODEL</span>
+            <span class="scan-data-value">ResNet-50</span>
+          </div>
+        </div>
+      </div>
+      <div class="float-tag float-tag-1">
+        <span class="float-tag-label">DETECTED</span>
+        Early Blight
+      </div>
+      <div class="float-tag float-tag-2">
+        <span class="float-tag-label">CONFIDENCE</span>
+        94.7%
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how-section">
+  <div class="container">
+    <div class="how-header">
+      <div class="section-tag" data-i18n="how_tag">HOW IT WORKS</div>
+      <h2 class="section-title">
+        <span data-i18n="how_title">Three steps to a</span>
+        <em data-i18n="how_em">diagnosis.</em>
+      </h2>
+      <p class="section-sub" data-i18n="how_sub">No expertise needed. Just upload a photo and let the model do the rest.</p>
+    </div>
+
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num" data-i18n="step1_num">Step 01</div>
+        <div class="step-icon">📸</div>
+        <h3 class="step-title" data-i18n="step1_title">Upload a Leaf Photo</h3>
+        <p class="step-desc" data-i18n="step1_desc">Take a clear, well-lit photo of the affected leaf and upload it via drag & drop or file picker.</p>
+      </div>
+      <div class="step-connector">
+        <div class="connector-line"></div>
+        <span class="connector-arrow">→</span>
+        <div class="connector-line"></div>
+      </div>
+      <div class="step-card">
+        <div class="step-num" data-i18n="step2_num">Step 02</div>
+        <div class="step-icon">🤖</div>
+        <h3 class="step-title" data-i18n="step2_title">AI Analysis</h3>
+        <p class="step-desc" data-i18n="step2_desc">Our deep learning model (ResNet-50, PlantVillage) inspects colour patterns, spots, and lesions.</p>
+      </div>
+      <div class="step-connector">
+        <div class="connector-line"></div>
+        <span class="connector-arrow">→</span>
+        <div class="connector-line"></div>
+      </div>
+      <div class="step-card">
+        <div class="step-num" data-i18n="step3_num">Step 03</div>
+        <div class="step-icon">📋</div>
+        <h3 class="step-title" data-i18n="step3_title">Get Results</h3>
+        <p class="step-desc" data-i18n="step3_desc">Receive the disease name, confidence score, pathogen identity, and a step-by-step treatment plan.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon" style="font-size:20px">⬡</span>
+      <span class="logo-text">CropScan<em>AI</em></span>
+      <p data-i18n="footer_tagline">AI-powered agriculture diagnostics for modern farming.</p>
+    </div>
+    <div class="footer-links">
+      <div class="footer-col">
+        <h4 data-i18n="footer_product">Product</h4>
+        <a href="#" data-i18n="footer_features">Features</a>
+        <a href="#" data-i18n="footer_accuracy">Accuracy Report</a>
+        <a href="#" data-i18n="footer_api">API Docs</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-i18n="footer_support">Support</h4>
+        <a href="#" data-i18n="footer_docs">Documentation</a>
+        <a href="#" data-i18n="footer_contact">Contact</a>
+        <a href="#" data-i18n="footer_privacy">Privacy Policy</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p data-i18n="footer_copy">© 2025 CropScan AI · Built for farmers, by scientists.</p>
+  </div>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
