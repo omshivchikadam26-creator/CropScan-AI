@@ -46,8 +46,11 @@ project/
 │   ├── scan.html
 │   └── guide.html
 └── static/
-    ├── style.css
-    └── script.js
+|   ├── style.css
+|   └── script.js
+└── Data/
+    ├── plantVillage DATASET
+
 ```
 
 ### Step 5 — Run the app
